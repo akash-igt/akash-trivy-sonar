@@ -25,7 +25,7 @@ jobs:
         id: sonar_quality_gate
         run: |
           STATUS=$(curl -s -u sqp_ccae52bfe1a866d4c67c58ab05c6e2ad1bec468d: \
-          "http://13.232.4.242:9091/api/qualitygates/project_status?projectKey=test" \
+          "http://13.232.4.242:9091/api/qualitygates/project_status?projectKey=akash-trivy-sonar" \
           | jq -r '.projectStatus.status')
  
           echo "Quality Gate Status: $STATUS"
