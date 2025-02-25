@@ -1,13 +1,17 @@
-# sqp_ccae52bfe1a866d4c67c58ab05c6e2ad1bec468d
+# Use Python as the base image
+FROM python:3.11-slim
 
-# Use the official Nginx image as a base
-FROM nginx:latest
+# Set the working directory
+WORKDIR /app
 
-# Copy the index.html file to the Nginx web root
-COPY index.html /usr/share/nginx/html/index.html
+# Copy application files
+COPY . /app
 
-# Expose port 80
-EXPOSE 80
+# Install dependencies
+RUN pip install --no-cache-dir -r requirements.txt
 
-# Start Nginx
-CMD ["nginx", "-g", "daemon off;"]
+# Expose application port
+EXPOSE 5000
+
+# Run the application
+CMD ["python", "app.py"]
