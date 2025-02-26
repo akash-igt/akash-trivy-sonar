@@ -40,7 +40,7 @@ jobs:
             -Dsonar.projectKey=akash-trivy-sonar \
             -Dsonar.sources=. \
             -Dsonar.host.url=http://13.232.4.242:9091  \
-            -Dsonar.login=sqp_d1b0751b50dfe59f5d63f0644e29a28b6e3
+            -Dsonar.login=sqp_ccae52bfe1a866d4c67c58ab05c6e2ad1bec468d
 
       - name: SonarQube Quality Gate Check
         id: sonar_quality_gate
